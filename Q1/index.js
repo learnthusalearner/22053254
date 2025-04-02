@@ -1,9 +1,14 @@
 require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
-
+const cors = require('cors');
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
+
+app.use(cors({
+     origin: 'http://localhost:3000' 
+    })
+);
 
 const API_TOKEN = process.env.ACCESS_TOKEN;
 const API_BASE_URL = process.env.BASE_URL;
